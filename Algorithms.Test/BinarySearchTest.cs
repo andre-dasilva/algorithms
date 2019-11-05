@@ -45,7 +45,6 @@ namespace Algorithms.Test
         [TestMethod]
         public void TestUserFirstNameIsNotInList()
         {
-            people.ForEach(System.Console.WriteLine);
             bool value = BinarySearch.Execute(people, (p) => string.Compare(p.FirstName, "Carl", System.StringComparison.CurrentCulture));
             Assert.IsFalse(value);
         }
