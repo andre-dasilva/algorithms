@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-
 namespace Algorithms
 {
-    public class Palindrome
+    public static class Palindrome
     {
         public static bool Execute(string word)
         {

@@ -26,10 +26,10 @@ namespace Algorithms.Test
 
             people.Sort((p1, p2) =>
             {
-                int compare = p1.FirstName.CompareTo(p2.FirstName);
+                int compare = string.Compare(p1.FirstName, p2.FirstName, System.StringComparison.CurrentCulture);
                 if (compare == 0)
                 {
-                    return p1.LastName.CompareTo(p2.LastName);
+                    return string.Compare(p1.LastName, p2.LastName, System.StringComparison.CurrentCulture);
                 }
                 return compare;
             });
@@ -38,14 +38,15 @@ namespace Algorithms.Test
         [TestMethod]
         public void TestUserFirstNameIsInList()
         {
-            bool value = BinarySearch.Execute(people, (p) => p.FirstName.CompareTo("Patrick"), 0, people.Count - 1);
+            bool value = BinarySearch.Execute(people, (p) => string.Compare(p.FirstName, "Patrick", System.StringComparison.CurrentCulture));
             Assert.IsTrue(value);
         }
 
         [TestMethod]
         public void TestUserFirstNameIsNotInList()
         {
-            bool value = BinarySearch.Execute(people, (p) => p.FirstName.CompareTo("Thomas"), 0, people.Count - 1);
+            people.ForEach(System.Console.WriteLine);
+            bool value = BinarySearch.Execute(people, (p) => string.Compare(p.FirstName, "Carl", System.StringComparison.CurrentCulture));
             Assert.IsFalse(value);
         }
     }
