@@ -1,3 +1,3 @@
-# Algorithms
+# Algorithms and Data Structures
 
-Project for algorithms in C#
+Project for algorithms and data structures in different programming languages
