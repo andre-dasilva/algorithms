@@ -11,12 +11,12 @@ class Node:
         return repr(self.data)
 
 
-class LinkedList:
+class SinglyLinkedList:
     def __init__(self, head: Node = None):
         self.head: Node = None
         self.size: int = 0
 
-    def append(self, node: Node) -> LinkedList:
+    def append(self, node: Node) -> SinglyLinkedList:
         self.size += 1
         if self.first() is None:
             self.head = node
@@ -41,10 +41,10 @@ class LinkedList:
             curr.next = None
             self.size -= 1
 
-    def first(self):
+    def first(self) -> int:
         return self.head
 
-    def last(self):
+    def last(self) -> Node:
         curr = self.head
         while curr.next:
             curr = curr.next

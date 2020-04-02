@@ -1,21 +1,21 @@
-from algorithms.lists.singly_linked_list import LinkedList, Node
+from algorithms.lists.singly_linked_list import SinglyLinkedList, Node
 
 
 def test_initialization():
-    slinked_list = LinkedList()
+    slinked_list = SinglyLinkedList()
     assert slinked_list.size == 0
     assert slinked_list.head is None
 
 
 def test_append_one():
-    slinked_list = LinkedList()
+    slinked_list = SinglyLinkedList()
     node = Node("String as test data")
     slinked_list.append(node)
     assert slinked_list.head == node
 
 
 def test_append_multiple():
-    slinked_list = LinkedList()
+    slinked_list = SinglyLinkedList()
     node1 = Node("test 1")
     node2 = Node("test 2")
     node3 = Node("test 3")
@@ -27,7 +27,7 @@ def test_append_multiple():
 
 
 def test_search_existing():
-    slinked_list = LinkedList()
+    slinked_list = SinglyLinkedList()
     node1 = Node("test 1")
     node2 = Node("test 2")
     node3 = Node("test 3")
@@ -38,7 +38,7 @@ def test_search_existing():
 
 
 def test_search_not_existing():
-    slinked_list = LinkedList()
+    slinked_list = SinglyLinkedList()
     node1 = Node("test 1")
     node2 = Node("test 2")
     node3 = Node("test 3")
@@ -49,7 +49,7 @@ def test_search_not_existing():
 
 
 def test_remove_first():
-    slinked_list = LinkedList()
+    slinked_list = SinglyLinkedList()
     node1 = Node("test 1")
     node2 = Node("test 2")
     node3 = Node("test 3")
@@ -61,7 +61,7 @@ def test_remove_first():
 
 
 def test_remove_last():
-    slinked_list = LinkedList()
+    slinked_list = SinglyLinkedList()
     node1 = Node("test 1")
     node2 = Node("test 2")
     node3 = Node("test 3")
@@ -73,7 +73,7 @@ def test_remove_last():
 
 
 def test_remove_between():
-    slinked_list = LinkedList()
+    slinked_list = SinglyLinkedList()
     node1 = Node("test 1")
     node2 = Node("test 2")
     node3 = Node("test 3")
