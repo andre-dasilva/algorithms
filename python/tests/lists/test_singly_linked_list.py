@@ -1,4 +1,4 @@
-from python.algorithms.singly_linked_list import LinkedList, Node
+from algorithms.lists.singly_linked_list import LinkedList, Node
 
 
 def test_initialization():
