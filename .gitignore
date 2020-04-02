@@ -68,3 +68,4 @@ orleans.codegen.cs
 __pycache__/
 *.pyc
 *.pytest_cache/
+.coverage
