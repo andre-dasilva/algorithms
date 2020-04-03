@@ -33,13 +33,13 @@ class DoublyLinkedList:
             return None
         return self.trailer.prev
 
-    def add_first(self, node):
+    def add_first(self, node) -> None:
         self.add_between(node, self.header, self.header.next)
 
-    def add_last(self, node):
+    def add_last(self, node) -> None:
         self.add_between(node, self.trailer.prev, self.trailer)
 
-    def add_between(self, new_node: Node, predecessor: Node, successor: Node):
+    def add_between(self, new_node: Node, predecessor: Node, successor: Node) -> None:
         new_node.prev = predecessor
         new_node.next = successor
         predecessor.next = new_node
