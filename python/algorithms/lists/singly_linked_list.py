@@ -41,7 +41,7 @@ class SinglyLinkedList:
             curr.next = None
             self.size -= 1
 
-    def first(self) -> int:
+    def first(self) -> Node:
         return self.head
 
     def last(self) -> Node:
@@ -58,5 +58,5 @@ class SinglyLinkedList:
             curr = curr.next
         return None
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return self.size == 0

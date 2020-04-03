@@ -15,7 +15,7 @@ class CircularLinkedList:
         self.tail: Node = None
         self.size: int = 0
 
-    def is_empty(self) -> int:
+    def is_empty(self) -> bool:
         return self.size == 0
 
     def first(self) -> Optional[Node]:
