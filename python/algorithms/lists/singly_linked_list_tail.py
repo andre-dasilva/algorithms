@@ -45,13 +45,15 @@ class SinglyLinkedListTail:
         self.tail = node
         self.size += 1
 
-    def remove_first(self) -> None:
+    def remove_first(self) -> Node:
         if self.is_empty():
             return None
-        self.head = self.head.next
+        old = self.head
+        self.head = old.next
         self.size -= 1
         if self.is_empty():
             self.tail = None
+        return old
 
     def remove_last(self) -> None:
         if self.is_empty():
