@@ -26,7 +26,6 @@ class Stack:
     def pop(self) -> Node:
         if self.is_empty():
             return None
-        node = self.stack[self.size - 1]
-        self.stack.remove(node)
+        node = self.stack.pop()
         self.size -= 1
         return node
