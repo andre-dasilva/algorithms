@@ -45,7 +45,19 @@ def test_remove_first():
     assert slinked_list.last() == node3
 
 
-def test_remove_last():
+def test_remove_last_single():
+    slinked_list = SinglyLinkedListTail()
+    node = Node("test 1")
+
+    slinked_list.add_last(node)
+
+    slinked_list.remove_last()
+
+    assert slinked_list.first() == None
+    assert slinked_list.last() == None
+
+
+def test_remove_last_multiple():
     slinked_list = SinglyLinkedListTail()
     node1 = Node("test 1")
     node2 = Node("test 2")

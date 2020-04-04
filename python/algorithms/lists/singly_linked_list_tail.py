@@ -57,11 +57,16 @@ class SinglyLinkedListTail:
         if self.is_empty():
             return None
 
-        prev = self.head
-        curr = self.head.next
+        prev = None
+        curr = self.head
         while curr.next:
             prev = curr
             curr = curr.next
-        prev.next = None
-        self.tail = prev
-        self.size -= 1
+
+        if prev is None:
+            self.head = None
+            self.tail = None
+        else:
+            prev.next = None
+            self.tail = prev
+            self.size -= 1
