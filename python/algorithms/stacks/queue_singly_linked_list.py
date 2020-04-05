@@ -8,6 +8,7 @@ class Node:
         self.data = data
 
 
+# Adapter pattern -> Queue with SinglyLinkedListTail instead of list
 class Queue:
     def __init__(self, max_size=None):
         self.queue: SinglyLinkedListTail = SinglyLinkedListTail()
