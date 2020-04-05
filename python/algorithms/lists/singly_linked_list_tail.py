@@ -39,6 +39,7 @@ class SinglyLinkedListTail:
 
     def add_last(self, node: Node) -> None:
         if self.is_empty():
+            node.next = None
             self.head = node
         else:
             self.tail.next = node
