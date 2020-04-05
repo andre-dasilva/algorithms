@@ -46,7 +46,6 @@ def test_pop_one(stack):
 
 
 def test_pop_multiple(stack):
-    stack = Stack()
     node1 = Node("test 1")
     node2 = Node("test 2")
     node3 = Node("test 3")
@@ -60,3 +59,16 @@ def test_pop_multiple(stack):
 
     assert stack.size == 1
     assert stack.top() == node1
+
+
+def test_max_size_stack():
+    stack = Stack(max_size=2)
+    node1 = Node("test 1")
+    node2 = Node("test 2")
+    node3 = Node("test 3")
+
+    stack.push(node1)
+    stack.push(node2)
+
+    with pytest.raises(ValueError):
+        stack.push(node3)

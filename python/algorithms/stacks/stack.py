@@ -7,14 +7,20 @@ class Node:
 
 
 class Stack:
-    def __init__(self):
+    def __init__(self, max_size=None):
         self.stack: List[Node] = []
         self.size: int = 0
+        if max_size is not None:
+            self.max_size = max_size
 
     def is_empty(self) -> bool:
         return self.size == 0
 
     def push(self, node: Node) -> None:
+        if hasattr(self, "max_size"):
+            if self.max_size == self.size:
+                raise ValueError("Stack is full")
+
         self.stack.append(node)
         self.size += 1
 
