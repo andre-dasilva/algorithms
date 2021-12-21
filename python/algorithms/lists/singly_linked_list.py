@@ -5,25 +5,26 @@ from typing import Any, Optional
 class Node:
     def __init__(self, data: Any):
         self.data: Any = data
-        self.next: Node = None
+        self.next: Optional[Node] = None
 
     def __repr__(self):
         return repr(self.data)
 
 
 class SinglyLinkedList:
-    def __init__(self, head: Node = None):
+    def __init__(self):
         self.head: Node = None
+        self.tail: Node = None
         self.size: int = 0
 
     def append(self, node: Node) -> SinglyLinkedList:
-        self.size += 1
-        if self.first() is None:
+        if self.head is None:
             self.head = node
-            return self
+        else:
+            self.tail.next = node
+        self.tail = node
+        self.size += 1
 
-        end = self.last()
-        end.next = node
         return self
 
     def remove(self, node: Node) -> None:
@@ -36,19 +37,20 @@ class SinglyLinkedList:
 
         if prev is None:
             self.head = curr.next
+        elif curr.next is None:
+            self.tail = prev
         elif curr:
             prev.next = curr.next
-            curr.next = None
             self.size -= 1
 
-    def first(self) -> Node:
+        print(prev, curr)
+
+
+    def first(self) -> Optional[Node]:
         return self.head
 
-    def last(self) -> Node:
-        curr = self.head
-        while curr.next:
-            curr = curr.next
-        return curr
+    def last(self) -> Optional[Node]:
+        return self.tail
 
     def search(self, data: Any) -> Optional[Node]:
         curr = self.head
