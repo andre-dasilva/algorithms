@@ -1,4 +1,4 @@
-// join written out :-). I know slices have a .join method
+// Join written out :-). I know slices have a .join method
 fn join(arr: &[&str]) -> String {
     let mut joined = String::new();
 
